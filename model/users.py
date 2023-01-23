@@ -170,7 +170,6 @@ class User(db.Model):
             "uid": self.uid,
             "dob": self.dob,
             "age": self.age,
-            "posts": [post.read() for post in self.posts]
         }
 
     # CRUD update: updates user name, password, phone
@@ -202,13 +201,16 @@ def initUsers():
     """Create database and tables"""
     db.create_all()
     """Tester data for table"""
-    u1 = User(name='Thomas Edison', uid='toby', password='123toby', dob=date(1847, 2, 11))
-    u2 = User(name='Nicholas Tesla', uid='niko', password='123niko')
-    u3 = User(name='Alexander Graham Bell', uid='lex', password='123lex')
-    u4 = User(name='Eli Whitney', uid='whit', password='123whit')
-    u5 = User(name='John Mortensen', uid='jm1021', dob=date(1959, 10, 21))
+    u1 = User(name='Thomas Edison', uid='Stack Overflow', password='123toby', dob=date(1847, 2, 11))
+    u2 = User(name='Nicholas Tesla', uid='Chicken Bytes', password='123niko')
+    u3 = User(name='Alexander Graham Bell', uid='Software Fries', password='123lex')
+    u4 = User(name='John Mortensen', uid='Slack Overflow', dob=date(1959, 10, 21))
+    u5 = User(name='Aniket Chakradeo', uid ='Vegetarian Burger', password='apcsp', dob=date(2007, 2, 20))
+    u6 = User(name='Soham Kamat', uid ='Fountain Drink', password='soham', dob=date(2007, 4, 20))
+   
+   
 
-    users = [u1, u2, u3, u4, u5]
+    users = [u1, u2, u3, u4, u5, u6]
 
     """Builds sample user/note(s) data"""
     for user in users:
